@@ -10,6 +10,6 @@ squares.forEach(square => {
             square.innerHTML = "X";
             turn++;
         }
-    });
+    }, {once: true});
 });
 })();
