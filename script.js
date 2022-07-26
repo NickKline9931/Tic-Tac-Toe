@@ -1,6 +1,7 @@
 const fillSquare = (() => {
     const squares = document.querySelectorAll('.square');
 let turn = 1;
+function takeTurns() {
 squares.forEach(square => {
     square.addEventListener('click', function () {
         if (turn % 2 == 0) {
@@ -13,6 +14,8 @@ squares.forEach(square => {
         checkWin();
     }, {once: true});
 });
+}
+takeTurns();
 function checkWin() {
     const s1 = document.getElementById("one");
     const s2 = document.getElementById("two");
@@ -23,7 +26,8 @@ function checkWin() {
     const s7 = document.getElementById("seven");
     const s8 = document.getElementById("eight");
     const s9 = document.getElementById("nine");
-    
+
+
     if((s1.innerHTML == "X") && (s2.innerHTML == "X") && (s3.innerHTML == "X") || 
     (s4.innerHTML == "X") && (s5.innerHTML == "X") && (s6.innerHTML == "X") ||
     (s7.innerHTML == "X") && (s8.innerHTML == "X") && (s9.innerHTML == "X") ||
@@ -36,6 +40,7 @@ function checkWin() {
         squares.forEach(square => {
             square.innerHTML = ''
         });
+        takeTurns();
     } else if((s1.innerHTML == "O") && (s2.innerHTML == "O") && (s3.innerHTML == "O") ||
     (s4.innerHTML == "O") && (s5.innerHTML == "O") && (s6.innerHTML == "O") ||
     (s7.innerHTML == "O") && (s8.innerHTML == "O") && (s9.innerHTML == "O") ||
@@ -48,6 +53,21 @@ function checkWin() {
         squares.forEach(square => {
             square.innerHTML = ''
         });
+        takeTurns();
+    } else if (s1.innerHTML.trim() != ''  
+    && s2.innerHTML.trim() != '' 
+    && s3.innerHTML.trim() != '' 
+    && s4.innerHTML.trim() != '' 
+    && s5.innerHTML.trim() != '' 
+    && s6.innerHTML.trim() != '' 
+    && s7.innerHTML.trim() != '' 
+    && s8.innerHTML.trim() != ''
+    ) { 
+        alert("Draw!");
+        squares.forEach(square => {
+            square.innerHTML = ''
+        });
+        takeTurns();
     }
 }
 })();
