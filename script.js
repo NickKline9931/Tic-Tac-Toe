@@ -1,17 +1,18 @@
 const fillSquare = (() => {
     const squares = document.querySelectorAll('.square');
-let turn = 1;
-function takeTurns() {
-squares.forEach(square => {
+    function takeTurns() {
+        let turn = 1;
+        squares.forEach(square => {
     square.addEventListener('click', function () {
         if (turn % 2 == 0) {
         square.innerHTML = "O";
         turn++;
+        checkWin();
         }else {
             square.innerHTML = "X";
             turn++;
+            checkWin();
         }
-        checkWin();
     }, {once: true});
 });
 }
