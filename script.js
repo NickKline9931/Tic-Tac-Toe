@@ -1,5 +1,7 @@
 const fillSquare = (() => {
     const squares = document.querySelectorAll('.square');
+    let playeronescore = 0;
+    let playertwoscore = 0;
     function takeTurns() {
         let turn = 1;
         squares.forEach(square => {
@@ -38,6 +40,8 @@ function checkWin() {
     (s1.innerHTML == "X") && (s5.innerHTML == "X") && (s9.innerHTML == "X") ||
     (s3.innerHTML == "X") && (s5.innerHTML == "X") && (s7.innerHTML == "X"))  {
         alert("X wins!");
+        playeronescore++;
+        document.getElementById("playeronescore").innerHTML = playeronescore;
         takeTurns();
         squares.forEach(square => {
             square.innerHTML = ''
@@ -51,6 +55,8 @@ function checkWin() {
     (s1.innerHTML == "O") && (s5.innerHTML == "O") && (s9.innerHTML == "O") ||
     (s3.innerHTML == "O") && (s5.innerHTML == "O") && (s7.innerHTML == "O")) {
         alert("O wins!");
+        playertwoscore++;
+        document.getElementById("playertwoscore").innerHTML = playertwoscore;
         takeTurns();
         squares.forEach(square => {
             square.innerHTML = ''
