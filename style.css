@@ -5,9 +5,24 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     border: 5px solid black;
+    font-size: 100px;
+    box-sizing: border-box;
 }
 
 #container > div {
     background-color: gold;
     border: 5px solid black;
+    text-align: center;
+    height: 9.8rem;
+    width: 9.8rem;
+    box-sizing: border-box;
+    padding-top: 0.8rem;
+}
+
+#scoreboard {
+    margin-right: 22rem;
+}
+
+body {
+    display: flex;
 }
