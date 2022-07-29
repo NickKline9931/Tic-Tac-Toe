@@ -1,8 +1,7 @@
+
 const fillSquare = (() => {
-    let playerone = prompt("Enter first player's name.");
-    document.getElementById("playeronename").innerHTML = playerone;
-    let playertwo = prompt("Enter second player's name.");
-    document.getElementById("playertwoname").innerHTML = playertwo;
+
+
     const squares = document.querySelectorAll('.square');
     let playeronescore = 0;
     let playertwoscore = 0;
@@ -82,3 +81,20 @@ function checkWin() {
     }
 }
 })();
+    const getPlayerOneName = (() => {
+    let playerone = prompt("Enter first player's name.");
+    if (playerone == '') {
+        document.getElementById("playeronename").innerHTML = "Player 1";
+    }else {
+        document.getElementById("playeronename").innerHTML = playerone;
+    }
+    })();
+    
+    const getPlayerTwoName = (() => {
+    let playertwo = prompt("Enter second player's name.");
+    if (playertwo == '') {
+        document.getElementById('playertwoname').innerHTML = "Player 2";
+    }else {
+        document.getElementById("playertwoname").innerHTML = playertwo;
+    }
+    })();
