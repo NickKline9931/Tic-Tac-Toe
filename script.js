@@ -1,4 +1,8 @@
 const fillSquare = (() => {
+    let playerone = prompt("Enter first player's name.");
+    document.getElementById("playeronename").innerHTML = playerone;
+    let playertwo = prompt("Enter second player's name.");
+    document.getElementById("playertwoname").innerHTML = playertwo;
     const squares = document.querySelectorAll('.square');
     let playeronescore = 0;
     let playertwoscore = 0;
