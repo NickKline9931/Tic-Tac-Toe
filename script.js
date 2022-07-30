@@ -1,26 +1,30 @@
 
 const fillSquare = (() => {
-    
     let round = 1;
     document.getElementById("roundcount").innerHTML = "Round: " + round;
     const squares = document.querySelectorAll('.square');
     let playeronescore = 0;
     let playertwoscore = 0;
+    
     let playerone = prompt("Enter first player's name.");
     if (playerone == '') {
         document.getElementById("playeronename").innerHTML = "Player 1";
+        playerone = "Player 1";
     }else {
         document.getElementById("playeronename").innerHTML = playerone;
     }
     
     
-   
+    
     let playertwo = prompt("Enter second player's name.");
     if (playertwo == '') {
         document.getElementById('playertwoname').innerHTML = "Player 2";
+        playertwo = "Player 2";
     }else {
         document.getElementById("playertwoname").innerHTML = playertwo;
     }
+    
+    document.getElementById("turntracker").innerHTML = "It's " + playerone + "'s turn.";
     
     function takeTurns() {
         let turn = 1;
@@ -29,10 +33,12 @@ const fillSquare = (() => {
         if (turn % 2 == 0) {
         square.innerHTML = "O";
         turn++;
+        document.getElementById("turntracker").innerHTML = "It's " + playerone + "'s turn."
         checkWin();
         }else {
             square.innerHTML = "X";
             turn++;
+            document.getElementById("turntracker").innerHTML = "It's " + playertwo + "'s turn."
             return checkWin();
         }
     }, {once: true});
