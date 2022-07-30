@@ -20,7 +20,22 @@
 }
 
 #scoreboard {
-    margin-right: 22rem;
+    display: flex;
+    flex-direction: column;
+    width: 27rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+#playeronename, #playertwoname {
+    text-decoration: underline;
+}
+
+#playeronescore, #playertwoscore {
+    position: relative;
+    bottom: 1.9rem;
+    left: 2rem;
 }
 
 body {
