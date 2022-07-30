@@ -1,10 +1,27 @@
 
 const fillSquare = (() => {
-
-
+    
+    let round = 1;
+    document.getElementById("roundcount").innerHTML = "Round: " + round;
     const squares = document.querySelectorAll('.square');
     let playeronescore = 0;
     let playertwoscore = 0;
+    let playerone = prompt("Enter first player's name.");
+    if (playerone == '') {
+        document.getElementById("playeronename").innerHTML = "Player 1";
+    }else {
+        document.getElementById("playeronename").innerHTML = playerone;
+    }
+    
+    
+   
+    let playertwo = prompt("Enter second player's name.");
+    if (playertwo == '') {
+        document.getElementById('playertwoname').innerHTML = "Player 2";
+    }else {
+        document.getElementById("playertwoname").innerHTML = playertwo;
+    }
+    
     function takeTurns() {
         let turn = 1;
         squares.forEach(square => {
@@ -16,7 +33,7 @@ const fillSquare = (() => {
         }else {
             square.innerHTML = "X";
             turn++;
-            checkWin();
+            return checkWin();
         }
     }, {once: true});
 });
@@ -46,6 +63,8 @@ function checkWin() {
         playeronescore++;
         document.getElementById("playeronescore").innerHTML = playeronescore;
         takeTurns();
+        round++;
+        document.getElementById("roundcount").innerHTML = "Round: " + round;
         squares.forEach(square => {
             square.innerHTML = ''
         });
@@ -60,6 +79,8 @@ function checkWin() {
         alert("O wins!");
         playertwoscore++;
         document.getElementById("playertwoscore").innerHTML = playertwoscore;
+        round++;
+        document.getElementById("roundcount").innerHTML = "Round: " + round;
         takeTurns();
         squares.forEach(square => {
             square.innerHTML = ''
@@ -74,6 +95,8 @@ function checkWin() {
     && s8.innerHTML.trim() != ''
     ) { 
         alert("Draw!");
+        round++;
+        document.getElementById("roundcount").innerHTML = "Round: " + round;
         takeTurns();
         squares.forEach(square => {
             square.innerHTML = ''
@@ -81,20 +104,3 @@ function checkWin() {
     }
 }
 })();
-    const getPlayerOneName = (() => {
-    let playerone = prompt("Enter first player's name.");
-    if (playerone == '') {
-        document.getElementById("playeronename").innerHTML = "Player 1";
-    }else {
-        document.getElementById("playeronename").innerHTML = playerone;
-    }
-    })();
-    
-    const getPlayerTwoName = (() => {
-    let playertwo = prompt("Enter second player's name.");
-    if (playertwo == '') {
-        document.getElementById('playertwoname').innerHTML = "Player 2";
-    }else {
-        document.getElementById("playertwoname").innerHTML = playertwo;
-    }
-    })();
