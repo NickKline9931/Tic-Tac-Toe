@@ -28,6 +28,12 @@
     font-size: 1.4rem;
 }
 
+#playerone, #playertwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #playeronename, #playertwoname {
     text-decoration: underline;
 }
@@ -43,6 +49,17 @@ h1 {
     position: relative;
     bottom: 1.9rem;
     left: 1.8rem;
+}
+
+#gameinfo {
+    width: 20rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1.5rem;
+    padding-top: 1.4rem;
+    padding-left: 0.2rem;
 }
 
 body {
