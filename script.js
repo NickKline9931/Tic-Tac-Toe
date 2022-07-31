@@ -24,7 +24,6 @@ const fillSquare = (() => {
         document.getElementById("playertwoname").innerHTML = playertwo;
     }
     
-    document.getElementById("turntracker").innerHTML = "It's " + playerone + "'s turn.";
     
     function takeTurns() {
         let turn = 1;
@@ -33,12 +32,14 @@ const fillSquare = (() => {
         if (turn % 2 == 0) {
         square.innerHTML = "O";
         turn++;
-        document.getElementById("turntracker").innerHTML = "It's " + playerone + "'s turn."
+        document.getElementById("turnname").innerHTML = playerone;
+        document.getElementById("turnname").style.color = "red";
         checkWin();
         }else {
             square.innerHTML = "X";
             turn++;
-            document.getElementById("turntracker").innerHTML = "It's " + playertwo + "'s turn."
+            document.getElementById("turnname").innerHTML = playertwo;
+            document.getElementById("turnname").style.color = "blue";
             return checkWin();
         }
     }, {once: true});
@@ -65,12 +66,14 @@ function checkWin() {
     (s3.innerHTML == "X") && (s6.innerHTML == "X") && (s9.innerHTML == "X") ||
     (s1.innerHTML == "X") && (s5.innerHTML == "X") && (s9.innerHTML == "X") ||
     (s3.innerHTML == "X") && (s5.innerHTML == "X") && (s7.innerHTML == "X"))  {
-        alert("X wins!");
+        alert(playerone +  " wins!");
         playeronescore++;
         document.getElementById("playeronescore").innerHTML = playeronescore;
         takeTurns();
         round++;
         document.getElementById("roundcount").innerHTML = "Round: " + round;
+        document.getElementById("turnname").innerHTML = playerone;
+        document.getElementById("turnname").style.color = "red";
         squares.forEach(square => {
             square.innerHTML = ''
         });
@@ -82,11 +85,13 @@ function checkWin() {
     (s3.innerHTML == "O") && (s6.innerHTML == "O") && (s9.innerHTML == "O") ||
     (s1.innerHTML == "O") && (s5.innerHTML == "O") && (s9.innerHTML == "O") ||
     (s3.innerHTML == "O") && (s5.innerHTML == "O") && (s7.innerHTML == "O")) {
-        alert("O wins!");
+        alert(playertwo +  " wins!");
         playertwoscore++;
         document.getElementById("playertwoscore").innerHTML = playertwoscore;
         round++;
         document.getElementById("roundcount").innerHTML = "Round: " + round;
+        document.getElementById("turnname").innerHTML = playerone;
+        document.getElementById("turnname").style.color = "red";
         takeTurns();
         squares.forEach(square => {
             square.innerHTML = ''
@@ -104,6 +109,8 @@ function checkWin() {
         round++;
         document.getElementById("roundcount").innerHTML = "Round: " + round;
         takeTurns();
+        document.getElementById("turnname").innerHTML = playerone;
+        document.getElementById("turnname").style.color = "red";
         squares.forEach(square => {
             square.innerHTML = ''
         });
