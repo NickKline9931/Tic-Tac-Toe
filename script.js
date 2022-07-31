@@ -23,6 +23,8 @@ const fillSquare = (() => {
     }else {
         document.getElementById("playertwoname").innerHTML = playertwo;
     }
+
+    document.getElementById("turnname").innerHTML = playerone;
     
     
     function takeTurns() {
@@ -116,4 +118,6 @@ function checkWin() {
         });
     }
 }
-})();
+});
+
+document.getElementById("startgame").addEventListener("click", fillSquare);
