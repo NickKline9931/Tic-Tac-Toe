@@ -1,5 +1,6 @@
 
 const fillSquare = (() => {
+    document.getElementById("startgame").style.display = "none";
     let round = 1;
     document.getElementById("roundcount").innerHTML = "Round: " + round;
     const squares = document.querySelectorAll('.square');
@@ -25,6 +26,7 @@ const fillSquare = (() => {
     }
 
     document.getElementById("turnname").innerHTML = playerone;
+    document.getElementById("gameinfo").style.display = "flex";
     
     
     function takeTurns() {
@@ -120,4 +122,4 @@ function checkWin() {
 }
 });
 
-document.getElementById("startgame").addEventListener("click", fillSquare);
+document.getElementById("startgame").addEventListener("click", fillSquare, {once: true});
