@@ -44,7 +44,7 @@ const fillSquare = (() => {
             turn++;
             document.getElementById("turnname").innerHTML = playertwo;
             document.getElementById("turnname").style.color = "blue";
-            return checkWin();
+            checkWin();
         }
     }, {once: true});
 });
