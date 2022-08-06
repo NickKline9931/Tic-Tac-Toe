@@ -36,6 +36,9 @@
 
 #playeronename, #playertwoname {
     text-decoration: underline;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 h1 {
@@ -60,7 +63,8 @@ h1 {
     overflow: hidden;
     height: 7rem;
     position: relative;
-    top: 1.6rem;
+    top: 1.28rem;
+    left: 0.1rem;
 }
 
 #turntracker {
